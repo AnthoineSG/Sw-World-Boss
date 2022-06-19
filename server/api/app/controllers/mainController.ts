@@ -1,6 +1,8 @@
 import Debug from "debug";
 const debug = Debug("mainController");
 
+import { mainModel } from "../models";
+
 interface result {
     title: string,
     content: string
@@ -12,21 +14,28 @@ interface ReceivedMessage {
 }
 
 export const mainController = {
-    home(req: Request, res) {
+    async home(req: Request, res) {
         const result: result = {
             title: "hello",
             content: "world"
         };
-        res.json(result);
+
+        debug(result);
+
+        const toto = await mainModel.allUsers();
+
+        res.json(toto);
     },
 
-    toto(req, res) {
+    async oneUser(req, res) {
         function saveMessage(message: ReceivedMessage) {
             const savedMessage = message;
             debug("chat", savedMessage.pseudo);
         }
         saveMessage({ content: "ze", pseudo: "to" });
-        res.send("trop hype");
+
+        const id = req.params.id;
+        const oneUser = await mainModel.getOneUser(id);
+        res.json(oneUser);
     },
 };
-
