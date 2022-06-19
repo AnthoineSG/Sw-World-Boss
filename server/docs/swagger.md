@@ -1,5 +1,11 @@
 # pour use swagger-jsdoc et swagger-ui-express
 
+- [Exemple](https://github.com/FaztWeb/typescript-swagger-lowdb)
+
+- [Swagger UI Express](https://www.npmjs.com/package/swagger-ui-express)
+
+- [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
+
 ## pour utilise ses modules
 
 dans le server.ts

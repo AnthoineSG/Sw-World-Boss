@@ -7,7 +7,7 @@ mainRouter
     .route("/")
     /**
      * @swagger
-     * /tasks:
+     * /api:
      *  get:
      *    summary: Get a task by Id
      *    tags: [Tasks]
@@ -25,10 +25,9 @@ mainRouter
 
 mainRouter
     .route("/swwb")
-
     /**
      * @swagger
-     * /tasks/count:
+     * /api/swwb:
      *  get:
      *    summary: Get a task by Id
      *    tags: [Tasks]
