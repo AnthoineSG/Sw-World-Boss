@@ -1,3 +1,6 @@
+import Debug from "debug";
+const debug = Debug("mainController");
+
 interface result {
     title: string,
     content: string
@@ -20,9 +23,9 @@ export const mainController = {
     toto(req, res) {
         function saveMessage(message: ReceivedMessage) {
             const savedMessage = message;
-            console.log("chat", savedMessage.content);
+            debug("chat", savedMessage.pseudo);
         }
-        saveMessage({ content: "to", pseudo: "to" });
+        saveMessage({ content: "ze", pseudo: "to" });
         res.send("trop hype");
     },
 };
