@@ -8,13 +8,10 @@ app.use(express.urlencoded({ extended: false }));
 
 import * as swaggerUI from "swagger-ui-express";
 import * as swaggerJsDoc from "swagger-jsdoc";
-import { options } from "./app/middlewares/swaggerConfig";
+import { options } from "./app/services/swaggerConfig";
 
 const specs = swaggerJsDoc(options);
 app.use("/apidocs", swaggerUI.serve, swaggerUI.setup(specs));
-
-
-
 
 app.use(router);
 

@@ -7,5 +7,5 @@ export const options = {
             description: "API Summoners war pour avoir des infos sur le World Boss",
         },
     },
-    apis: ["./api/app/routes/mainRouter.ts"], // A preciser a partir du package.json
+    apis: ["./api/app/routes/mainRouter.ts"],
 };
