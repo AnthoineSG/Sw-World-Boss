@@ -1,11 +1,8 @@
 import { Router } from "express";
-
 const router = Router();
 
-import { mainController } from "../controllers/mainController";
+import mainRouter from "./mainRouter";
 
-router
-    .route("/api")
-    .get(mainController.home);
+router.use(mainRouter);
 
 export default router;
