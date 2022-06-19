@@ -1,0 +1,5 @@
+%syntax-version=1.0.0
+%project=swwb
+
+01-create_user 2022-06-19T13:51:51Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # - cree les tables en DB
+02-create_tables 2022-06-19T13:51:58Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # - cree les tables en DB
