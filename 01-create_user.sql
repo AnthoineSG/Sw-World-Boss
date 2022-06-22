@@ -1,7 +1,0 @@
-BEGIN;
-
-CREATE USER "swwb" WITH PASSWORD 'swwb';
-
-CREATE DATABASE "swwb" OWNER "swwb";
-
-COMMIT;
