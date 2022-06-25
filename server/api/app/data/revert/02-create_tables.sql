@@ -4,7 +4,9 @@ BEGIN;
 
 DROP TABLE IF EXISTS
     "unit_list",
-    "wizard_info"
+    "wizard_info",
+    "runes_stored",
+    "runes_equiped"
 CASCADE;
 
 COMMIT;
