@@ -2,8 +2,9 @@
 
 BEGIN;
 
-DROP TABLE IF EXISTS "wizard_info";
-
-DROP TYPE IF EXISTS "unit_info";
+DROP TABLE IF EXISTS
+    "unit_list",
+    "wizard_info"
+CASCADE;
 
 COMMIT;

@@ -2,6 +2,5 @@
 
 BEGIN;
 
-DROP USER IF EXISTS "swwb";
 
 COMMIT;

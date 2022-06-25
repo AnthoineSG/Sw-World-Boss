@@ -2,6 +2,6 @@
 
 BEGIN;
 
-SELECT rolname FROM pg_roles WHERE rolname='swwb';
+
 
 ROLLBACK;
