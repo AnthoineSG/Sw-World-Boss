@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS "wizard_info" (
     "updated_at" TIMESTAMPTZ
 );
 
+ALTER TABLE IF EXISTS "wizard_info" OWNER TO "swwb";
+
 CREATE TABLE IF NOT EXISTS "unit_list" (
     "id" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     "wizard_id" INTEGER REFERENCES "wizard_info"("wizard_id"),
@@ -22,6 +24,8 @@ CREATE TABLE IF NOT EXISTS "unit_list" (
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     "updated_at" TIMESTAMPTZ
 );
+
+ALTER TABLE IF EXISTS "unit_list" OWNER TO "swwb";
 
 -- CREATE TYPE "tp_pri_eff" AS (
 --     prin_stat_name
@@ -53,11 +57,29 @@ CREATE TABLE IF NOT EXISTS "runes" (
     "updated_at" TIMESTAMPTZ
 );
 
+ALTER TABLE IF EXISTS "runes" OWNER TO "swwb";
 
+CREATE TABLE IF NOT EXISTS "world_boss" (
+    "id" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "wizard_id" INTEGER REFERENCES "wizard_info"("wizard_id"),
+    "worldboss_id" INTEGER NOT NULL,
+    "battle_start_time" TIMESTAMPTZ NOT NULL,
+    "battle_end_time" TIMESTAMPTZ NOT NULL,
+    "worldboss_used_unit" BIGINT[] NOT NULL,
+    "actu_ranking" INTEGER NOT NULL,
+    "actu_accumulate_damage" BIGINT NOT NULL,
+    "actu_rating_id" INTEGER NOT NULL,
+    "actu_ranking_rate" FLOAT NOT NULL,
+    "prev_ranking" INTEGER NOT NULL,
+    "prev_accumulate_damage" BIGINT NOT NULL,
+    "prev_rating_id" INTEGER NOT NULL,
+    "prev_ranking_rate" FLOAT NOT NULL,
+    "best_ranking" INTEGER NOT NULL,
+    "best_accumulate_damage" BIGINT NOT NULL,
+    "best_rating_id" INTEGER NOT NULL,
+    "world_boss_best_rank_id" INTEGER NOT NULL
+);
 
-ALTER TABLE IF EXISTS "wizard_info" OWNER TO "swwb";
-
-ALTER TABLE IF EXISTS "unit_list" OWNER TO "swwb";
-
+ALTER TABLE IF EXISTS "world_boss" OWNER TO "swwb";
 
 COMMIT;
