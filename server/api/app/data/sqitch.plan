@@ -3,3 +3,6 @@
 
 01-create_user 2022-06-19T13:51:51Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # - cree les tables en DB
 02-create_tables 2022-06-19T13:51:58Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # - cree les tables en DB
+03-views 2022-06-26T17:54:24Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # creation des views
+04-indexs 2022-06-26T18:03:33Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # creation des indexs
+05-functions 2022-06-26T18:04:08Z anthoine saint-germain <antho@LAPTOP-7E3Q1H74> # creation des fonctions
