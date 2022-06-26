@@ -22,4 +22,6 @@
 
 3. Verifier les tables avec `../app/data $ sqitch verify` dans le terminal
 
-4. Inserer les data en BDD `../app/data $ node 04-insert_data.js` dans le terminal
+4. Inserer les data en BDD `../app/data $ node insert_data.js` dans le terminal
+
+5. Pour des version special utilisé `../app/data $ bash 01(02,03)-deploy(revert,verify).sh` dans le termial
