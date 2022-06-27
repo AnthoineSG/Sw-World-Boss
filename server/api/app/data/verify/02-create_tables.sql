@@ -2,6 +2,6 @@
 
 BEGIN;
 
-SELECT id FROM "wizard_info" LIMIT 1;
+SELECT "id" FROM "wizard_info" LIMIT 1;
 
 ROLLBACK;

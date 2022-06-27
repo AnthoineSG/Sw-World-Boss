@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS "world_boss" (
     "worldboss_id" INTEGER NOT NULL,
     "battle_start_time" TIMESTAMPTZ NOT NULL,
     "battle_end_time" TIMESTAMPTZ NOT NULL,
-    "worldboss_used_unit" BIGINT[] NOT NULL,
+    "worldboss_used_unit" BIGINT[][] NOT NULL,
     "actu_ranking" INTEGER NOT NULL,
     "actu_accumulate_damage" BIGINT NOT NULL,
     "actu_rating_id" INTEGER NOT NULL,

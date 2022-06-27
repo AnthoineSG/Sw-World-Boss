@@ -104,7 +104,13 @@ async function world_boss() {
 
     const dataWorld_boss_best_rank_id = data.world_boss_best_rank_id;
 
-    let query = `INSERT INTO "world_boss" ( "wizard_id", "worldboss_id", "battle_start_time", "battle_end_time", "worldboss_used_unit", "actu_ranking", "actu_accumulate_damage", "actu_rating_id", "actu_ranking_rate", "prev_ranking", "prev_accumulate_damage", "prev_rating_id", "prev_ranking_rate", "best_ranking", "best_accumulate_damage", "best_rating_id", "world_boss_best_rank_id") VALUES ( ${listDataWizard_id[0]}, ${listDataWorldboss_id[0]}, '${listDataBattle_start_time[0]}', '${listDataBattle_end_time[0]}', ARRAY[${listDataWorldboss_used_unit}], ${listDataActu_ranking[0]}, ${listDataActu_accumulate_damage[0]}, ${listDataActu_rating_id[0]}, ${listDataActu_ranking_rate[0]}, ${listDataPrev_ranking[0]}, ${listDataPrev_accumulate_damage[0]}, ${listDataPrev_rating_id[0]}, ${listDataPrev_ranking_rate[0]}, ${listDataBest_ranking[0]}, ${listDataBest_accumulate_damage[0]}, ${listDataBest_rating_id[0]}, ${dataWorld_boss_best_rank_id});`;
+    const aled = [];
+    listDataWorldboss_used_unit.forEach(element => {
+        const truc = `{${element}}`;
+        aled.push(truc);
+    });
+
+    let query = `INSERT INTO "world_boss" ( "wizard_id", "worldboss_id", "battle_start_time", "battle_end_time", "worldboss_used_unit", "actu_ranking", "actu_accumulate_damage", "actu_rating_id", "actu_ranking_rate", "prev_ranking", "prev_accumulate_damage", "prev_rating_id", "prev_ranking_rate", "best_ranking", "best_accumulate_damage", "best_rating_id", "world_boss_best_rank_id") VALUES ( ${listDataWizard_id[0]}, ${listDataWorldboss_id[0]}, '${listDataBattle_start_time[0]}', '${listDataBattle_end_time[0]}', '{${aled}}', ${listDataActu_ranking[0]}, ${listDataActu_accumulate_damage[0]}, ${listDataActu_rating_id[0]}, ${listDataActu_ranking_rate[0]}, ${listDataPrev_ranking[0]}, ${listDataPrev_accumulate_damage[0]}, ${listDataPrev_rating_id[0]}, ${listDataPrev_ranking_rate[0]}, ${listDataBest_ranking[0]}, ${listDataBest_accumulate_damage[0]}, ${listDataBest_rating_id[0]}, ${dataWorld_boss_best_rank_id});`;
 
     const client = await pool.connect();
     await client.query(query);

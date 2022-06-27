@@ -2,5 +2,6 @@
 
 BEGIN;
 
+-- XXX Add verifications here.
 
 COMMIT;
