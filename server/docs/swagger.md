@@ -1,4 +1,4 @@
-# pour use swagger-jsdoc et swagger-ui-express
+# Pour use swagger-jsdoc et swagger-ui-express
 
 - [Exemple](https://github.com/FaztWeb/typescript-swagger-lowdb)
 
@@ -6,9 +6,9 @@
 
 - [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
 
-## pour utilise ses modules
+## Pour utilise ses modules
 
-dans le server.ts
+Dans le server.ts
 
 ```js
 import * as swaggerUI from "swagger-ui-express";
@@ -19,9 +19,9 @@ const specs = swaggerJsDoc(options);
 app.use("/apidocs", swaggerUI.serve, swaggerUI.setup(specs));
 ```
 
-## pour les options
+## Pour les options
 
-dans un fichier a part pour bien ranger
+Dans un fichier a part pour bien ranger
 
 ```js
 export const options = {
@@ -37,9 +37,9 @@ export const options = {
 };
 ```
 
-## pour faire des schema
+## Pour faire des schema
 
-dans le router
+Dans le router
 
 ```js
 /**
@@ -92,7 +92,7 @@ dans le router
  */
 ```
 
-## pour faire une description de route
+## Pour faire une description de route
 
 ````js
 /**
