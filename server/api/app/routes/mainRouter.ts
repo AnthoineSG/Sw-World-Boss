@@ -1,46 +1,46 @@
 import { Router } from "express";
 const mainRouter = Router();
 
-import { mainController } from "../controllers/mainController";
+import { wbController } from "../controllers/wbController";
 
 mainRouter
-    .route("/users")
+    .route("/actualwb")
     /**
      * @swagger
-     * /api/swwb:
+     * /api/actualwb:
      *  get:
-     *    summary: Get all users in database
-     *    tags: [Users]
+     *    summary: Get all users and actual World boss score in database
+     *    tags: [Actual]
      *    responses:
      *      200:
-     *        description: the total number of tasks
+     *        description: List of all user with score in world boss on json format
      *        content:
-     *          text/plain:
+     *          application/json:
      *            schema:
-     *              type: integer
-     *              example: 15
+     *              type: json
+     *              example: [{"wizard_id":988024,"pseudo":"Sekito","country":"FR","level":50,"worldboss_id":10393,"battle_start_time":"2022-05-14T21:15:00.000Z","battle_end_time":"2022-05-20T00:35:00.000Z","actu_ranking":12912,"actu_accumulate_damage":"7253265","actu_rating_id":3002,"actu_ranking_rate":12.4,"worldboss_used_unit":[["2125661987"],["13387619315"],["12435349869"]]}]
      *
      */
-    .get(mainController.home);
+    .get(wbController.getAllActualWb);
 
 mainRouter
-    .route("/users/:id")
+    .route("/actualwb/:pseudo")
     /**
      * @swagger
-     * /api:
+     * /api/actualwb/{pseudo}:
      *  get:
-     *    summary: Get a task by Id
-     *    tags: [Tasks]
+     *    summary: Get one user with actual score in world boss
+     *    tags: [Actual]
      *    responses:
      *      200:
-     *        description: the total number of tasks
+     *        description: One user with score in world boss on json format
      *        content:
-     *          text/plain:
+     *          application/json:
      *            schema:
-     *              type: integer
-     *              example: 15
+     *              type: json
+     *              example: {"wizard_id":988024,"pseudo":"Sekito","country":"FR","level":50,"worldboss_id":10393,"battle_start_time":"2022-05-14T21:15:00.000Z","battle_end_time":"2022-05-20T00:35:00.000Z","actu_ranking":12912,"actu_accumulate_damage":"7253265","actu_rating_id":3002,"actu_ranking_rate":12.4,"worldboss_used_unit":[["2125661987"],["13387619315"],["12435349869"]]}
      *
      */
-    .get(mainController.oneUser);
+    .get(wbController.GetOneActualWb);
 
 export default mainRouter;

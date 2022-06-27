@@ -1,21 +1,21 @@
 /* eslint-disable quotes */
 import { pool } from "./config/dbconnect";
 
-export const mainModel = {
+export const actualWbModel = {
     async allUsers() {
         const client = await pool.connect();
         const query = {
-            text: `SELECT * FROM "wizard_info";`,
+            text: `SELECT * FROM "actual_wb";`,
         };
         const result = await client.query(query);
         return result.rows;
     },
 
-    async getOneUser(id: number) {
+    async getOneUser(pseudo: string) {
         const client = await pool.connect();
         const query = {
-            text: `SELECT * FROM "wizard_info" WHERE id = $1;`,
-            values: [ id ]
+            text: `SELECT * FROM "actual_wb" WHERE "pseudo" = $1;`,
+            values: [ pseudo ]
         };
         const result = await client.query(query);
         return result.rows[0];

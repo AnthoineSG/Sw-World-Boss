@@ -15,7 +15,7 @@ import * as swaggerJsDoc from "swagger-jsdoc";
 import { options } from "./app/services/swaggerConfig";
 
 const specs = swaggerJsDoc(options);
-app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(specs));
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
 
 app.use(router);
 
