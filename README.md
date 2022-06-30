@@ -19,3 +19,6 @@ Recupere les informations du joueur via sont json et les integre a la base de do
 Pour plus d'informations regarder [ici](./server/README.md)
 
 ---
+
+
+doc https://github.com/Xzandro/sw-exporter
