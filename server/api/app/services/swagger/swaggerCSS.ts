@@ -1,6 +1,6 @@
 export const cssOptions = {
     customCss: `
-    .swagger-ui .topbar { background-color: #000000; border-bottom: 20px solid #5dc6d1; }
+    .swagger-ui .topbar { background-color: #000000; border-bottom: 20px solid #2a69a7; }
     
     a { color: #8c8cfa; }
     ::-webkit-scrollbar-track-piece { background-color: rgba(255, 255, 255, .2) !important; }
