@@ -8,8 +8,7 @@
     },
     "scripts": {
         "build": "tsc",
-        "copy-views": "cp -r ./api/app/views/ ./api/dist/app/",
-        "copy-public": "cp -r ./api/public/ ./api/dist/",
+        "copy-files": "cp -r ./api/app/views/ ./api/dist/app/ & cp -r ./api/public/ ./api/dist/",
         "start": "node ./api/dist/index.js",
         "dev": "ts-node-dev ./api/index.ts",
         "test": ""
