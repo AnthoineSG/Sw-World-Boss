@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.set("views", path.join(__dirname, "app/views"));
+app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "pug");
 
 app.use(express.urlencoded({ extended: false }));
@@ -23,5 +23,5 @@ app.use(router);
 
 const PORT = process.env.PORT ?? 3000;
 app.listen(PORT, () => {
-    console.log(`Server start on http://localhost:${PORT}`);
+    console.log(`Server API start on http://localhost:${PORT}`);
 });

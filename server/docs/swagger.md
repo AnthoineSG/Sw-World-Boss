@@ -6,6 +6,10 @@
 
 - [swagger-jsdoc](https://www.npmjs.com/package/swagger-jsdoc)
 
+- [Repo des boss de Cassini](https://github.com/Megafredo/swagger-docs)
+
+- [Article version simple](https://dev.to/kabartolo/how-to-document-an-express-api-with-swagger-ui-and-jsdoc-50do)
+
 ## Pour utilise ses modules
 
 Dans le server.ts
@@ -33,7 +37,7 @@ export const options = {
             description: "API Summoners war pour avoir des infos sur le World Boss",
         },
     },
-    apis: ["./api/app/routes/mainRouter.ts"], // A preciser a partir du package.json
+    apis: ["./app/routes/mainRouter.ts"], // A preciser a partir du package.json
 };
 ```
 
