@@ -5,17 +5,19 @@ import router from "./app/routes";
 
 const app = express();
 
+app.use(express.static(__dirname + "/public"));
+
 app.set("views", path.join(__dirname, "app/views"));
 app.set("view engine", "pug");
 
 app.use(express.urlencoded({ extended: false }));
 
-import * as swaggerUI from "swagger-ui-express";
 import * as swaggerJsDoc from "swagger-jsdoc";
-import { options } from "./app/services/swaggerConfig";
+import * as swaggerUI from "swagger-ui-express";
+import { options, cssOptions } from "./app/services/swagger";
 
-const specs = swaggerJsDoc(options);
-app.use("/docs", swaggerUI.serve, swaggerUI.setup(specs));
+const swaggerSpecs = swaggerJsDoc(options);
+app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerSpecs, cssOptions));
 
 app.use(router);
 

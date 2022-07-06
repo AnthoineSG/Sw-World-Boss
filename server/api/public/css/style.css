@@ -1,0 +1,21 @@
+html{
+    background-color: rgb(185 205 198)
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column;
+    height: 90%;
+}
+
+.main h2 {
+    text-align: center;
+}
+
+#link {
+    
+    color: black;
+    text-decoration: none;
+}

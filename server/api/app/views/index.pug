@@ -1,8 +1,10 @@
-html
-    head
-        title= title
-    body
+include includes/head.pug
+body
+    header.header
         h1= message
+    main.main
         section
             h2 La doc
-            a(href="http://localhost:8080/docs" role="button") C'est par ici
+            a(id="link" href="http://localhost:8080/docs") C'est par ici
+    footer.footer
+        h2 orvoir
