@@ -14,12 +14,20 @@ const app = {
 
         const response = await fetch(urlToFetch, fetchOptions);
         if (response.ok) {
-            const toto = await response.json();
-            console.log(toto[0].pseudo);
+            const actualwb = await response.json();
+            app.makeInDom(actualwb);
         }
         else {
             return;
         }
+    },
+
+    makeInDom(actual) {
+        const pseudo = document.querySelector(".header__div-pseudo");
+        pseudo.textContent = actual[0].pseudo;
+
+        const level = document.querySelector(".header__div-level");
+        level.textContent = actual[0].level;
     },
 };
 
