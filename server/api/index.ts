@@ -9,6 +9,10 @@ const app = express();
 import * as cors from "cors";
 app.use(cors());
 
+import * as multer from "multer";
+const upload = multer();
+app.use(upload.none());
+
 app.use(express.static(__dirname + "/public"));
 
 app.set("views", path.join(__dirname, "/app/views"));

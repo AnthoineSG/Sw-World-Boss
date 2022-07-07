@@ -2,6 +2,32 @@
 
 BEGIN;
 
+CREATE DOMAIN "dom_pseudo" AS TEXT
+CHECK (
+    VALUE ~ '^[\w]{4,10}$'
+);
+
+CREATE DOMAIN "dom_email" AS TEXT
+CHECK (
+    VALUE ~ '^[\w.-]+\@[a-z]+\.[a-z]{2,3}$'
+);
+
+CREATE DOMAIN "dom_password" AS TEXT
+CHECK (
+    VALUE ~ '^[\w:!;.+]{8,15}$'
+);
+
+CREATE TABLE IF NOT EXISTS "user" (
+    "id" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "pseudo" "dom_pseudo" NOT NULL,
+    "email" "dom_email" NOT NULL,
+    "password" "dom_password" NOT NULL,
+    "created_at" TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    "updated_at" TIMESTAMPTZ
+);
+
+ALTER TABLE IF EXISTS "user" OWNER TO "swwb";
+
 CREATE TABLE IF NOT EXISTS "wizard_info" (
     "id" INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     "wizard_id" INTEGER NOT NULL UNIQUE,

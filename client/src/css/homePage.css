@@ -1,7 +1,8 @@
-html {
-    background-color: #1f1f1f;
-    color: #b5bac9;
+input {
+    background-color: #b5bac9;
+    color: #1f1f1f;
 }
-h1 {
-    background-color: #2a69a7;
+
+button {
+    background-color: #b5bac9;
 }
