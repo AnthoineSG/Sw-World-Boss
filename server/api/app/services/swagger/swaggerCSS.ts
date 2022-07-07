@@ -238,7 +238,7 @@ export const cssOptions = {
         transition: color .15s ease-in 0s;
     }
     .swagger-ui .opblock-tag {
-        border-bottom: 1px solid rgba(58, 64, 80, .3);
+        border-bottom: 5px solid rgba(58, 64, 80, .3);
         color: #b5bac9;
         transition: all .2s ease 0s;
     }
@@ -397,8 +397,8 @@ export const cssOptions = {
         background: rgba(0, 0, 0, .7);
         color: #ebebeb;
     }
-    .swagger-ui section.models { border: 1px solid rgba(58, 64, 80, .3); }
-    .swagger-ui section.models.is-open h4 { border-bottom: 1px solid rgba(58, 64, 80, .3); }
+    .swagger-ui section.models { border: 1px solid rgba(58, 64, 80, .3); border-bottom: 5px solid rgba(58, 64, 80, .3); }
+    .swagger-ui section.models.is-open h4 { border-bottom: 5px solid rgba(58, 64, 80, .3); }
     .swagger-ui section.models .model-container { background: rgba(0, 0, 0, .05); }
     .swagger-ui section.models .model-container:hover { background: rgba(0, 0, 0, .07); }
     .swagger-ui .model-box { background: rgba(0, 0, 0, .1); }

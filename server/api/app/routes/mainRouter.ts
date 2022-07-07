@@ -22,7 +22,6 @@ mainRouter
     *                $ref: '#/components/schemas/Actual'
     *      404:
     *         description: Error not found
-    *
     */
     .get(wbController.getAllActualWb)
 ;

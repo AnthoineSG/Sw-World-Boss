@@ -22,7 +22,6 @@ userRouter
     *                $ref: '#/components/schemas/User'
     *      404:
     *         description: Error not found
-    *
     */
     .get(userController.getAll)
 ;
@@ -65,7 +64,6 @@ userRouter
     *                $ref: '#/components/schemas/User'
     *      404:
     *         description: Error not found
-    *
     */
     .post(userController.insertOne)
 ;
