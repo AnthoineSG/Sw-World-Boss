@@ -21,5 +21,5 @@ export const options = {
             },
         ],
     },
-    apis: ["./api/app/routes/mainRouter.ts"],
+    apis: ["./api/app/routes/*"],
 };

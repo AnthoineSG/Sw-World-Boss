@@ -1,5 +1,9 @@
 import { Request, Response } from "express";
 
+/**
+* Retourne la page 404
+* @param res Renvoie un json indiquant l'erreur 404
+*/
 export function notFound(req: Request, res: Response) {
-    res.send("404 not found");
+    res.status(404).json({ message: "404 not found" });
 }

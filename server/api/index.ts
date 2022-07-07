@@ -10,11 +10,12 @@ app = Express();
 import * as cors from "cors";
 app.use(cors());
 
+//? *********MULTER*********/
 import * as multer from "multer";
 const upload = multer();
 app.use(upload.none());
 
-
+//? *********MIDDLEWARE*********/
 app.use(Express.json());
 
 app.use(Express.static(__dirname + "/public"));
