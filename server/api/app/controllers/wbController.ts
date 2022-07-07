@@ -1,3 +1,5 @@
+import { Request, Response } from "express";
+
 import Debug from "debug";
 const debug = Debug("mainController");
 
@@ -14,7 +16,7 @@ interface ReceivedMessage {
 }
 
 export const wbController = {
-    async getAllActualWb(req: Request, res) {
+    async getAllActualWb(req: Request, res: Response) {
         const result: result = {
             title: "hello",
             content: "world"
@@ -25,7 +27,7 @@ export const wbController = {
         res.json(toto);
     },
 
-    async GetOneActualWb(req, res) {
+    async GetOneActualWb(req: Request, res: Response) {
         function saveMessage(message: ReceivedMessage) {
             const savedMessage = message;
             debug("chat", savedMessage.pseudo);

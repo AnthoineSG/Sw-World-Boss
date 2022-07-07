@@ -1,8 +1,7 @@
 import { pool } from "./config/dbconnect";
 
 import Debug from "debug";
-const debugKey = Debug("userController");
-const debugValue = Debug("userController:value");
+const debugController = Debug("userController");
 
 interface user {
     pseudo: string,
@@ -19,7 +18,7 @@ export const userModel = {
             const checkUser = await pool.query(check);
 
             if (checkUser.rowCount) {
-                throw new Error("l'utilisateur existe deja !");
+                throw new Error("L'utilisateur existe deja !");
             }
             else {
                 let query = "INSERT INTO \"user\" (pseudo, email, password) VALUES (";
@@ -28,15 +27,14 @@ export const userModel = {
                 }
                 let queryEnd = query.slice(0, -1);
                 queryEnd += ") RETURNING *;";
-                debugKey(queryEnd);
+                debugController(queryEnd);
 
                 const result = await pool.query(queryEnd);
                 return result.rows[0];
             }
         } catch (error) {
-            debugKey(error.message);
+            debugController(error.message);
             return error;
         }
-
     },
 };

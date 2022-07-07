@@ -1,9 +1,9 @@
-import { Router } from "express";
+import { Router, Request, Response } from "express";
 const userRouter = Router();
 
 import { userController } from "../controllers/userController";
 
-userRouter.get("/user", (req, res) => {
+userRouter.get("/user", (req: Request, res: Response) => {
     res.json({});
 });
 

@@ -2,8 +2,9 @@ import "dotenv/config";
 
 import * as path from "path";
 
-import * as express from "express";
-const app = express();
+import * as Express from "express";
+let app: Express.Application | undefined = undefined;
+app = Express();
 
 //? *********CORS*********/
 import * as cors from "cors";
@@ -13,12 +14,15 @@ import * as multer from "multer";
 const upload = multer();
 app.use(upload.none());
 
-app.use(express.static(__dirname + "/public"));
+
+app.use(Express.json());
+
+app.use(Express.static(__dirname + "/public"));
 
 app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "pug");
 
-app.use(express.urlencoded({ extended: false }));
+app.use(Express.urlencoded({ extended: false }));
 
 //? *********SWAGGER*********/
 import * as swaggerJsDoc from "swagger-jsdoc";
