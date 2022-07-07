@@ -2,7 +2,7 @@ const app = {
     baseUrl: "http://localhost:8080/api",
 
     init() {
-        console.log("Hello");
+        console.log("Bienvenue sur la page de world boss actuel");
         app.fetchAllWizard();
     },
 
