@@ -3,25 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import Debug from "debug";
 const debugJoi = Debug("schemaJoi");
 
-import * as Joi from "joi";
-
-const schema = Joi.object({
-    pseudo: Joi
-        .string()
-        .min(4)
-        .max(10)
-        .required(),
-
-    email: Joi
-        .string()
-        .email({ minDomainSegments: 2, tlds: { allow: ["com", "net", "fr"] } })
-        .required(),
-
-    password: Joi
-        .string()
-        .pattern(new RegExp("^[a-zA-Z1-9:!;.+]{8,15}$"))
-        .required(),
-}).required();
+import { schema } from "./schema";
 
 /**
 * Verifie que le schema du body est valide
