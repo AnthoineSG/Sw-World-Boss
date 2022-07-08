@@ -3,6 +3,8 @@ const userRouter = Router();
 
 import { userController } from "../controllers/userController";
 
+import { bodyValidator } from "../services/checkForm";
+
 userRouter
     .route("/user")
     /**
@@ -65,7 +67,7 @@ userRouter
     *      404:
     *         description: Error not found
     */
-    .post(userController.insertOne)
+    .post(bodyValidator, userController.insertOne)
 ;
 
 export default userRouter;

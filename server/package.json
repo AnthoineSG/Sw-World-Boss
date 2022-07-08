@@ -14,7 +14,7 @@
         "insert": "cd api/app/data/ & node insert_data.js",
         "start": "node ./api/dist/index.js",
         "dev": "ts-node-dev ./api/index.ts",
-        "test": ""
+        "test": "ts-node-dev ./api/app/services/checkForm.ts"
     },
     "keywords": [],
     "author": "AnthoineSG",
@@ -23,6 +23,7 @@
         "cors": "^2.8.5",
         "dotenv": "16.0.1",
         "express": "4.18.1",
+        "joi": "^17.6.0",
         "multer": "^1.4.5-lts.1",
         "pg": "8.7.3",
         "pug": "3.0.2",
@@ -33,6 +34,7 @@
         "@types/cors": "^2.8.12",
         "@types/debug": "4.1.7",
         "@types/express": "4.17.13",
+        "@types/joi": "^17.2.3",
         "@types/multer": "^1.4.7",
         "@types/pg": "8.6.5",
         "@types/swagger-jsdoc": "6.0.1",
