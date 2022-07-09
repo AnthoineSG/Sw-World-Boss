@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import Debug from "debug";
 const debugJoi = Debug("schemaJoi");
 
-import { schema } from "./schema";
+import { schema } from "../services/schema";
 
 /**
 * Verifie que le schema du body est valide

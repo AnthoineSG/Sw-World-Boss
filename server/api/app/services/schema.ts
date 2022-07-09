@@ -1,5 +1,7 @@
 import * as Joi from "joi";
 
+//! --------- BODY ---------
+
 export const schema = Joi.object({
     pseudo: Joi
         .string()
